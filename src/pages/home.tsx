@@ -44,7 +44,6 @@ interface quizDataType {
 const Home = () => {
   const [data, setData] = useState<dataType[]>([]);
   const [newInput, setNewInput] = useState<string>("");
-  const [quizData, setQuizData] = useState<quizDataType[]>([]);
   const [optionNumber, setOptionNumber] = useState(0);
   const [newQuestion, setNewQuestion] = useState<string>("");
   const [correctOption, setCorrectOption] = useState<string>("");
@@ -118,8 +117,6 @@ const Home = () => {
       return item;
     });
 
-    // Update state with new quiz data
-    setQuizData(updatedData);
 
     // Save updated data back into localStorage
     window.localStorage.setItem("data", JSON.stringify(updatedData));
